@@ -1,0 +1,18 @@
+name: test tern-action
+
+on:
+  push:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: philips-labs/tern-action@ts-action
+      id: scan
+      with:
+        image: alpine:latest
+        outputDirectory: .
+
+    - name: cat output
+      run: cat ${{ steps.scan.outputs.path }}
