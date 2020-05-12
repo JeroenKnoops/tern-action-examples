@@ -12,7 +12,7 @@ jobs:
       id: scan
       with:
         image: alpine:latest
-        outputDirectory: .
+        output-directory: .
 
     - name: cat output
       run: cat ${{ steps.scan.outputs.path }}
