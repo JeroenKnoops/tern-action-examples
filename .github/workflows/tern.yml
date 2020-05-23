@@ -5,11 +5,11 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
-      - uses: philips-labs/tern-action@v0.1.0
+      - uses: philips-labs/tern-action@output-as-file
         id: scan
         with:
           image: alpine:latest
-      - run: printenv steps.scan.outputs.output > tern.log
+      - run: echo ${{ steps.scan.outputs.file}}
       - uses: actions/upload-artifact@v2
         with:
           name: tern
