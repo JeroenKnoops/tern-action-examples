@@ -9,7 +9,7 @@ jobs:
         id: scan
         with:
           image: alpine:latest
-      - run: echo "${{ steps.scan.outputs.output }}" > tern.log
+      - run: printenv steps.scan.outputs.output > tern.log
       - uses: actions/upload-artifact@v2
         with:
           name: tern
