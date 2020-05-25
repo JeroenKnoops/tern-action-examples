@@ -13,6 +13,7 @@ jobs:
         with:
           image: alpine:latest
           format: spdxtagvalue
+          output: tern.spdx
       - uses: actions/upload-artifact@v2
         with:
           name: tern
