@@ -12,8 +12,7 @@ jobs:
         id: scan
         with:
           image: alpine:latest
-      - run: echo ${{ steps.scan.outputs.file}}
       - uses: actions/upload-artifact@v2
         with:
           name: tern
-          path: tern.json
+          path: ${{ steps.scan.outputs.file}}
