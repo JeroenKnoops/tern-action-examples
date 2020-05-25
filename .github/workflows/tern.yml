@@ -1,5 +1,8 @@
 name: build
-on: [push]
+on: 
+  push:
+  issue_comment:
+    types: [created, edited]
 
 jobs:
   scan:
