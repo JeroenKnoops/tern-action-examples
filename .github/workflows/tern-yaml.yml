@@ -12,7 +12,7 @@ jobs:
         id: scan
         with:
           image: alpine:latest
-          format: json
+          format: yaml
       - uses: actions/upload-artifact@v2
         with:
           name: tern
