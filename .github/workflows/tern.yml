@@ -8,7 +8,7 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
-      - uses: philips-labs/tern-action@support-multiple-outputs
+      - uses: philips-labs/tern-action@add-html-output
         id: scan
         with:
           image: alpine:latest
