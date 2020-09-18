@@ -6,8 +6,19 @@ on:
 
 jobs:
   scan:
+    if: contains(github.event.comment.body, '/scan')
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/github-script@v2
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `🚀 Running tern action for default output.`
+            })
       - uses: philips-labs/tern-action@v1.1.0
         id: scan
         with:
