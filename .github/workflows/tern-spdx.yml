@@ -6,7 +6,6 @@ on:
 
 jobs:
   scan:
-    if: contains(github.event.comment.body, '/scan')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v2
