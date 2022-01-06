@@ -19,7 +19,7 @@ jobs:
               repo: context.repo.repo,
               body: `🚀 Running tern action for spdx output.`
             })
-      - uses: philips-labs/tern-action@v1.1.0
+      - uses: philips-labs/tern-action@update-versions
         id: scan
         with:
           image: alpine:latest
